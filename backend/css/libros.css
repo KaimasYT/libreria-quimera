@@ -1,0 +1,132 @@
+/* --- Estilo inspirado en biblioteca medieval atrevida --- */
+
+/* Fondo general con imagen medieval */
+body {
+    font-family: 'Cinzel', serif;
+    background-image: url('https://www.transparenttextures.com/patterns/old-wall.png'); /* textura medieval */
+    color: #23169b;
+    margin: 0;
+    padding: 0;
+}
+
+/* Cabecera como pergamino oscuro */
+header {
+    background: rgba(78, 52, 46, 0.8);
+    color: #f5deb3;
+    padding: 20px 0;
+    font-family: 'Garamond', serif;
+    border-bottom: 5px solid #a67c52;
+    text-align: center;
+    position: relative;
+}
+
+/* Navegación compacta en la parte superior derecha */
+nav {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #6d4c41;
+    border: 2px solid #a67c52;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+nav a {
+    color: #fceabb;
+    font-weight: bold;
+    font-family: 'Cinzel', serif;
+    text-decoration: none;
+    padding: 5px 10px;
+    display: inline-block;
+}
+
+nav a:hover {
+    background: #8d6e63;
+    border-radius: 5px;
+}
+
+/* Títulos como encabezados caligráficos */
+h1, h2 {
+    font-family: 'Cinzel Decorative', serif; /* fuente decorativa estilo medieval */
+    color: #3b2f2f;
+    text-shadow: 2px 2px 2px #d7ccc8;
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* Información del usuario */
+.user-info {
+    font-family: 'Cinzel', serif;
+    color: #3b2f2f;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Lista de libros */
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+/* Estilo de cada libro */
+.book {
+    background: #fffef0;
+    border: 2px solid #a67c52;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 4px 4px 10px rgba(60, 45, 20, 0.3);
+    display: flex;
+    align-items: center;
+}
+
+.book-img {
+    width: 100px; /* Tamaño fijo para todas las imágenes */
+    height: 150px; /* Tamaño fijo para todas las imágenes */
+    border: 5px solid #a67c52;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(60, 45, 20, 0.3);
+    margin-right: 20px;
+}
+
+.book-info {
+    text-align: left;
+}
+
+.book-title {
+    font-family: 'Cinzel Decorative', serif;
+    color: #3b2f2f;
+    margin-bottom: 10px;
+}
+
+.book-author {
+    font-family: 'Cinzel', serif;
+    color: #6d4c41;
+    margin-bottom: 10px;
+}
+
+.book-preview {
+    font-family: 'Georgia', serif;
+    color: #3b2f2f;
+    margin-bottom: 10px;
+}
+
+/* Botón de leer */
+.leer-btn {
+    background: #a67c52;
+    color: #fff8dc;
+    font-weight: bold;
+    border: none;
+    font-family: 'Cinzel', serif;
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+
+.leer-btn:hover {
+    background: #8d6e63;
+}

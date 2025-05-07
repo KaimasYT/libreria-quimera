@@ -3,38 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Librería Químera</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f2f2f2;
-            text-align: center;
-            padding: 50px;
-        }
-        h1 {
-            color: #333;
-        }
-        a {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
-            text-decoration: none;
-            color: white;
-            background-color: #007BFF;
-            border-radius: 5px;
-        }
-        a:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <h1>Bienvenido a Librería Químera</h1>
-    <p>Comparte y descubre libros de texto online</p>
+<?php
+require 'config.php';
 
-    <div>
-        <a href="register.php">Registrarse</a>
-        <a href="login.php">Iniciar sesión</a>
-        <a href="libros.php">Ver libros</a>
+// Obtener la imagen del último libro subido
+$stmt = $pdo->query("SELECT imagen FROM libros ORDER BY fecha_subida DESC LIMIT 1");
+$imagen = $stmt->fetch(PDO::FETCH_ASSOC);
+$imagenRuta = $imagen && !empty($imagen['imagen']) ? htmlspecialchars($imagen['imagen']) : 'images/default.png';
+?>
+<body>
+    <header>
+        <h1>Librería Químera</h1>
+        <nav>
+            <a href="register.php">Registrarse</a>
+            <a href="login.php">Iniciar sesión</a>
+            <a href="libros.php">Ver libros</a>
+        </nav>
+    </header>
+    <div class="container">
+        <!-- Título principal -->
+        <h1 class="title">Bienvenido a Librería Químera</h1>
+
+        <!-- Descripción o texto introductorio -->
+        <p class="text-center">Comparte y descubre libros de texto online</p>
+
+        <!-- Imagen del último libro -->
+        <h2 class="text-center">Último libro compartido</h2>
+        <div class="destacada-img-wrapper" style="text-align: center; margin: 20px 0;">
+            <img src="<?= $imagenRuta ?>" alt="Último libro subido" class="destacada-img">
+        </div>
     </div>
+    <footer style="text-align: center; margin-top: 40px; padding: 20px; background-color: #f4f4f4;">
+        <p>Síguenos en nuestras redes sociales:</p>
+        <p>Facebook | Twitter | Instagram</p>
+        <p>&copy; 2025 Librería Químera. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>

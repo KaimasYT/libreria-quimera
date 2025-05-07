@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($usuario && password_verify($password, $usuario["password"])) {
         $_SESSION["usuario_id"] = $usuario["id"];
         $_SESSION["nombre"] = $usuario["nombre"];
-        header("Location: upload.php");
+        header("Location: libros.php");
         exit;
     } else {
         $mensaje = "Credenciales incorrectas.";
@@ -25,11 +25,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Login - Librería Químera</title>
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
+
 <body>
+    <header>
+        <h1>Librería Químera</h1>
+        <nav>
+            <a href="register.php">Registrarse</a>
+            <a href="login.php">Iniciar sesión</a>
+            <a href="libros.php">Ver libros</a>
+        </nav>
+    </header>
     <h2>Iniciar sesión</h2>
     <form method="post">
         Correo: <input type="email" name="email"><br><br>
@@ -38,4 +50,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
     <p><?= $mensaje ?></p>
 </body>
+
 </html>

@@ -14,5 +14,6 @@ CREATE TABLE IF NOT EXISTS libros (
     contenido TEXT,
     usuario_id INT,
     fecha_subida TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    imagen VARCHAR(255) DEFAULT 'images/default.png',
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
 );

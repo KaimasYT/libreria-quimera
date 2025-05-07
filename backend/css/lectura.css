@@ -1,0 +1,87 @@
+/* --- Estilo inspirado en biblioteca medieval atrevida --- */
+
+/* Fondo general con imagen medieval */
+body {
+    font-family: 'Cinzel', serif;
+    background-image: url('https://www.transparenttextures.com/patterns/old-wall.png'); /* textura medieval */
+    color: #272727;
+    margin: 0;
+    padding: 0;
+}
+
+/* Cabecera como pergamino oscuro */
+header {
+    background: rgba(78, 52, 46, 0.8);
+    color: #f5deb3;
+    padding: 20px 0;
+    font-family: 'Garamond', serif;
+    border-bottom: 5px solid #a67c52;
+    text-align: center;
+    position: relative;
+}
+
+/* Navegación compacta en la parte superior derecha */
+nav {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #6d4c41;
+    border: 2px solid #a67c52;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+nav a {
+    color: #fceabb;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Cinzel', serif;
+    text-decoration: none;
+    padding: 5px 10px;
+    display: inline-block;
+    line-height: 1.5; /* Ajusta la altura de línea para centrar verticalmente */
+}
+
+nav a:hover {
+    background: #8d6e63;
+    border-radius: 5px;
+}
+
+/* Títulos como encabezados caligráficos */
+h1, h2 {
+    font-family: 'Cinzel Decorative', bold ;
+    font-size: 300%;/* fuente decorativa estilo medieval */
+    color: #3b2f2f;
+    text-shadow: 2px 2px 2px #d7ccc8;
+    margin: 20px 0;
+    text-align: center;
+}
+
+a {
+    display: flex; /* Cambia a flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #3498db;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Contenido del libro */
+.book-content {
+    white-space: pre-wrap;
+    font-size: 1.1em;
+    text-align: initial;
+    padding: 20px;
+    background: #fffef0;
+    border: 2px solid #a67c52;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(60, 45, 20, 0.3);
+    margin: 20px auto;
+    max-width: calc(100% - 300px); /* Ajuste para dejar 20px de margen a cada lado */
+    
+
+}
