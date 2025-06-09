@@ -23,9 +23,8 @@ jobs:
       - name: 🔄 Comprobar docker-compose
         run: docker compose -f docker-compose.yml config
 
-      # (Opcional) Test básico: que los contenedores se levanten
       - name: 🚀 Levantar contenedores en segundo plano
-        run: docker-compose up -d
+        run: docker compose up -d
 
       - name: ✅ Esperar y comprobar contenedores activos
         run: |
@@ -33,4 +32,4 @@ jobs:
           docker ps
 
       - name: 🧹 Apagar contenedores
-        run: docker-compose down
+        run: docker compose down
