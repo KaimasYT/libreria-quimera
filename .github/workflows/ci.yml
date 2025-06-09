@@ -21,7 +21,7 @@ jobs:
         run: docker build -t libreria-backend ./backend
 
       - name: 🔄 Comprobar docker-compose
-        run: docker-compose -f docker-compose.yml config
+        run: docker compose -f docker-compose.yml config
 
       # (Opcional) Test básico: que los contenedores se levanten
       - name: 🚀 Levantar contenedores en segundo plano
