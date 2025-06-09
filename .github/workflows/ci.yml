@@ -1,0 +1,36 @@
+name: CI - Librería Químera
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🔄 Checkout del repositorio
+        uses: actions/checkout@v3
+
+      - name: 🐳 Configurar Docker
+        uses: docker/setup-buildx-action@v3
+
+      - name: 🧱 Construir contenedor del backend
+        run: docker build -t libreria-backend ./backend
+
+      - name: 🔄 Comprobar docker-compose
+        run: docker-compose -f docker-compose.yml config
+
+      # (Opcional) Test básico: que los contenedores se levanten
+      - name: 🚀 Levantar contenedores en segundo plano
+        run: docker-compose up -d
+
+      - name: ✅ Esperar y comprobar contenedores activos
+        run: |
+          sleep 10
+          docker ps
+
+      - name: 🧹 Apagar contenedores
+        run: docker-compose down
