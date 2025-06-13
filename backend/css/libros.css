@@ -3,21 +3,90 @@
 /* Fondo general con imagen medieval */
 body {
     font-family: 'Cinzel', serif;
-    background-image: url('https://www.transparenttextures.com/patterns/old-wall.png'); /* textura medieval */
+    background-image: url('../images/old-wall.png'); /* textura medieval */
     color: #23169b;
     margin: 0;
     padding: 0;
 }
 
 /* Cabecera como pergamino oscuro */
-header {
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background: rgba(78, 52, 46, 0.8);
     color: #f5deb3;
-    padding: 20px 0;
-    font-family: 'Garamond', serif;
+    padding: 10px 20px;
     border-bottom: 5px solid #a67c52;
-    text-align: center;
+    font-family: 'Garamond', serif;
     position: relative;
+}
+
+/* Logo libremente ajustable sin afectar el alto del header */
+.logo-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.logo {
+    height: 90px;
+    max-height: 100px;
+}
+
+.logo-esquina {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.logo-esquina img {
+    height: 100px;
+}
+
+/* Logo libremente ajustable sin afectar el alto del header */
+.logo-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.logo {
+    height: 90px;
+    max-height: 100px;
+}
+
+.logo-esquina {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.logo-esquina img {
+    height: 100px;
+}
+
+/* Título siempre centrado horizontalmente */
+.titulo-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
+.titulo {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 2.5em;
+    text-align: center;
+    color: #3b2f2f;
+    text-shadow: 2px 2px 3px #d7ccc8;
+}
+
+/* Caja vacía para equilibrar el espacio del logo a la derecha */
+.espacio-vacio {
+    flex: 1;
 }
 
 /* Navegación compacta en la parte superior derecha */

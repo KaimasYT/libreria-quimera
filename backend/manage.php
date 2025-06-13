@@ -27,46 +27,44 @@ $libros = $stmt->fetchAll();
     <meta charset="UTF-8">
     <title>Gestionar libros - Librería Químera</title>
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        .libro {
-            display: flex;
-            align-items: center;
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 10px;
-        }
-        .libro img {
-            width: 10%;
-            height: auto;
-            margin-right: 10px;
-        }
-        .libro .titulo {
-            flex-grow: 1;
-            font-size: 24px; /* Ajusta el tamaño del título */
-        }
-        .libro .eliminar {
-            background-color: #f44336;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
-    <h2>Gestionar mis libros</h2>
-    <p>Bienvenido, <?= htmlspecialchars($_SESSION["nombre"]) ?> | <a href="libros.php">Ver biblioteca</a> | <a href="logout.php">Cerrar sesión</a></p>
-    <p><?= $mensaje ?></p>
-
-    <?php foreach ($libros as $libro): ?>
-        <div class="libro">
-            <img src="<?= htmlspecialchars($libro["imagen"] ?: 'images/default.png') ?>" alt="Imagen del libro">
-            <div class="titulo"><?= htmlspecialchars($libro["titulo"]) ?></div>
-            <form method="post" style="margin: 0;">
-                <input type="hidden" name="libro_id" value="<?= $libro["id"] ?>">
-                <button type="submit" class="eliminar">Eliminar</button>
-            </form>
+    <header class="header">
+        <a href="index.php" class="logo-container">
+            <img src="images/logoquimera.png" alt="Logo de la librería" class="logo">
+        </a>
+        <div class="titulo-container">
+            <h1 class="titulo">Librería Químera</h1>
         </div>
-    <?php endforeach; ?>
+        <div class="espacio-vacio"></div>
+    </header>
+
+    <nav class="nav-usuario">
+        <p>
+            Bienvenido, <?= htmlspecialchars($_SESSION["nombre"]) ?> |
+            <a href="libros.php">Ver biblioteca</a> |
+            <a href="logout.php">Cerrar sesión</a>
+        </p>
+    </nav>
+
+    <main class="main-container">
+        <h2>Gestionar mis libros</h2>
+        <?php if ($mensaje): ?>
+            <p class="mensaje-exito"><?= htmlspecialchars($mensaje) ?></p>
+        <?php endif; ?>
+
+        <div class="lista-libros">
+            <?php foreach ($libros as $libro): ?>
+                <div class="libro">
+                    <img src="<?= htmlspecialchars($libro["imagen"] ?: 'images/default.png') ?>" alt="Imagen del libro" class="libro-img">
+                    <div class="titulo-libro"><?= htmlspecialchars($libro["titulo"]) ?></div>
+                    <form method="post" class="form-eliminar">
+                        <input type="hidden" name="libro_id" value="<?= $libro["id"] ?>">
+                        <button type="submit" class="btn-eliminar">Eliminar</button>
+                    </form>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </main>
 </body>
 </html>

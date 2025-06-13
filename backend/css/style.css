@@ -3,21 +3,65 @@
 /* Fondo general con imagen medieval */
 body {
     font-family: 'Cinzel', serif;
-    background-image: url('https://www.transparenttextures.com/patterns/old-wall.png'); /* textura medieval */
+    background-image: url('../images/old-wall.png'); /* textura medieval */
     color: #23169b;
     margin: 0;
     padding: 0;
 }
 
 /* Cabecera como pergamino oscuro */
-header {
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background: rgba(78, 52, 46, 0.8);
     color: #f5deb3;
-    padding: 20px 0;
-    font-family: 'Garamond', serif;
+    padding: 10px 20px;
     border-bottom: 5px solid #a67c52;
-    text-align: center;
+    font-family: 'Garamond', serif;
     position: relative;
+}
+
+/* Logo libremente ajustable sin afectar el alto del header */
+.logo-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.logo {
+    height: 90px;
+    max-height: 100px;
+}
+
+.logo-esquina {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.logo-esquina img {
+    height: 100px;
+}
+
+/* Título siempre centrado horizontalmente */
+.titulo-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.titulo {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 2.5em;
+    text-align: center;
+    color: #3b2f2f;
+    text-shadow: 2px 2px 3px #d7ccc8;
+}
+
+/* Caja vacía para equilibrar el espacio del logo a la derecha */
+.espacio-vacio {
+    flex: 1;
 }
 
 /* Navegación compacta en la parte superior derecha */
@@ -119,4 +163,91 @@ th {
 
 .text-center{
     text-align: center;
+}
+
+/* Formulario de login más equilibrado */
+.form-login {
+    font-family: 'Garamond', serif;
+    font-size: 18px;
+    background: #fff8dc;
+    border: 2px solid #a67c52;
+    border-radius: 10px;
+    padding: 25px;
+    max-width: 500px;
+    margin: 40px auto;
+}
+
+/* Inputs más pequeños pero aún legibles */
+.form-login input[type="text"],
+.form-login input[type="email"],
+.form-login input[type="password"],
+.form-login input[type="submit"] {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 16px;
+    font-family: 'Garamond', serif;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #a67c52;
+    border-radius: 6px;
+}
+
+.lista-libros {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.libro {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+        }
+
+.libro-img {
+    width: 80px;
+    height: auto;
+    margin-right: 15px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.titulo-libro {
+    flex-grow: 1;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.form-eliminar {
+    margin: 0;
+}
+
+.btn-eliminar {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-eliminar:hover {
+    background-color: #d32f2f;
+}
+
+.mensaje-exito {
+    color: green;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.nav-usuario p {
+    margin: 10px 20px;
+    font-size: 1rem;
 }

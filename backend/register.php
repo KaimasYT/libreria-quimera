@@ -33,22 +33,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="css/style.css">
 
 </head>
-<header>
-    <h1>Librería Químera</h1>
-    <nav>
-        <a href="register.php">Registrarse</a>
-        <a href="login.php">Iniciar sesión</a>
-        <a href="libros.php">Ver libros</a>
-    </nav>
-</header>
-<h2>Registro de usuario</h2>
-<form method="post">
-    Nombre: <input type="text" name="nombre"><br><br>
-    Correo: <input type="email" name="email"><br><br>
-    Contraseña: <input type="password" name="password"><br><br>
-    <input type="submit" value="Registrarse">
-</form>
-<p><?= $mensaje ?></p>
-</body>
+<body>
+    <!-- Logo en la esquina superior izquierda -->
+    <a href="index.php" style="position: absolute; top: 10px; left: 10px;">
+        <img src="images/logoquimera.png" alt="Logo de Librería Químera" style="height: 100px;">
+    </a>
 
+    <header>
+        <h1>Librería Químera</h1>
+        <nav>
+            <a href="register.php">Registrarse</a>
+            <a href="login.php">Iniciar sesión</a>
+            <a href="libros.php">Ver libros</a>
+        </nav>
+    </header>
+
+    <h2>Registro de usuario</h2>
+
+    <form method="post" class="form-login">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre"><br><br>
+
+        <label for="email">Correo:</label>
+        <input type="email" name="email" id="email"><br><br>
+
+        <label for="password">Contraseña:</label>
+        <input type="password" name="password" id="password"><br><br>
+
+        <input type="submit" value="Registrarse">
+    </form>
+
+    <p style="text-align: center; margin-top: 10px;"><?= $mensaje ?></p>
+</body>
 </html>

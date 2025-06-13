@@ -17,20 +17,30 @@ $libros = $stmt->fetchAll();
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Biblioteca - Librería Químera</title>
     <link rel="stylesheet" href="css/libros.css">
 </head>
+
 <body>
-    <header>
-        <h1>Biblioteca - Librería Químera</h1>
-        <nav>
+<header class="header">
+        <a href="index.php">
+            <img src="images/logoquimera.png" alt="Logo de Librería Químera" style="height: 100px;">
+        </a>
+        <div class="titulo-container">
+            <h1 class="titulo">Librería Químera</h1>
+        </div>
+        <div class="espacio-vacio"></div> <!-- zona vacía para equilibrar -->
+    </header>
+
+
+    <nav>
             <a href="upload.php">Subir libro</a>
             <a href="logout.php">Cerrar sesión</a>
             <a href="manage.php">Mis Libros</a>
         </nav>
-    </header>
     <div class="container">
         <h2>Biblioteca de libros</h2>
         <p class="user-info">
@@ -40,14 +50,15 @@ $libros = $stmt->fetchAll();
         <div class="book-list">
             <?php foreach ($libros as $libro): ?>
                 <div class="book">
-                    <img src="<?= htmlspecialchars($libro["imagen"] ?: 'images/default.png') ?>" alt="Imagen del libro" class="book-img">
+                    <img src="<?= htmlspecialchars($libro["imagen"] ?: 'images/default.png') ?>" alt="Imagen del libro"
+                        class="book-img">
                     <div class="book-info">
                         <div class="book-title"><?= htmlspecialchars($libro["titulo"]) ?></div>
                         <div class="book-author">Subido por <?= htmlspecialchars($libro["nombre"]) ?></div>
                         <?php
-                            // Extraer las primeras 50 palabras del contenido
-                            $palabras = explode(' ', strip_tags($libro["contenido"]));
-                            $resumen = implode(' ', array_slice($palabras, 0, 50));
+                        // Extraer las primeras 50 palabras del contenido
+                        $palabras = explode(' ', strip_tags($libro["contenido"]));
+                        $resumen = implode(' ', array_slice($palabras, 0, 50));
                         ?>
                         <p class="book-preview"><?= htmlspecialchars($resumen) ?>...</p>
                         <form action="leer.php" method="get">
@@ -60,4 +71,5 @@ $libros = $stmt->fetchAll();
         </div>
     </div>
 </body>
+
 </html>
