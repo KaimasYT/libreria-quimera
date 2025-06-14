@@ -53,22 +53,31 @@ http://localhost:8282
 
 ```
 libreria-quimera/
-├── backend/                  # Código PHP y frontend
-│   ├── index.php
-│   ├── login.php
-│   ├── register.php
-│   ├── libros.php
-│   ├── upload.php
-│   ├── leer.php             # Página de lectura + comentarios
-│   ├── logout.php
-│   ├── config.php
-│   └── css/style.css
+├── .github/
+│   └── workflows/
+│       └── ci.yml                 # GitHub Actions workflow para CI/CD
+├── backend/
+│   ├── css/
+│   │   ├── lectura.css           # Estilo específico para leer.php
+│   │   ├── libros.css            # Estilo específico para libros.php
+│   │   └── style.css             # Estilo general (medieval)
+│   ├── images/                   # Logos, texturas y elementos visuales
+│   ├── Dockerfile                # Imagen del contenedor del backend PHP
+│   ├── config.php                # Conexión a base de datos
+│   ├── index.php                 # Página principal
+│   ├── leer.php                  # Página de lectura + comentarios
+│   ├── libros.php                # Biblioteca compartida
+│   ├── login.php                 # Iniciar sesión
+│   ├── logout.php                # Cerrar sesión
+│   ├── manage.php                # Administracion de libros subidos por el usuario
+│   ├── register.php              # Registro de usuarios
+│   └── upload.php                # Subida de libros
 ├── db/
-│   └── init.sql              # Script de creación de tablas
-├── images/                   # Logo e imágenes usadas
-├── docker-compose.yml
-├── Dockerfile (en backend/)
-└── .github/workflows/ci.yml
+│   └── init.sql                  # Script de creación de base de datos
+├── images/                       
+├── README.md                     # Manual de uso
+└── docker-compose.yml            # Orquestador de contenedores
+
 ```
 
 ---
@@ -126,16 +135,6 @@ Ver en la pestaña **Actions** del repositorio.
 - El logo se encuentra en `/images/logoquimera.png`
 - Se usa una textura medieval como fondo (`old-wall.png`)
 - El sistema está pensado para funcionar en **local**
-- No incluye cifrado HTTPS ni despliegue externo (por ahora)
-
----
-
-## 📷 Capturas (opcional)
-
-- 📖 Página principal con último libro subido
-- 📥 Formulario de subida de libros
-- 🔐 Login y registro de usuarios
-- 💬 Comentarios en los libros
 
 ---
 
